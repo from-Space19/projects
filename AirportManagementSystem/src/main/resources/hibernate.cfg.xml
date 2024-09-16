@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <!-- Database Connection Settings -->
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/airport_management</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">@Pass123</property>
+
+        <!-- Enable Hibernate to auto-update the schema -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <!-- Show generated SQL -->
+        <property name="hibernate.show_sql">true</property>
+
+        <!-- Transaction and Session Management -->
+        <property name="hibernate.transaction.coordinator_class">jdbc</property>
+        <property name="hibernate.current_session_context_class">thread</property>
+
+        <!-- Entity Mappings -->
+        <mapping class="com.airport.entity.Airline"/>
+        <mapping class="com.airport.entity.Airport"/>
+        <mapping class="com.airport.entity.Staff"/>
+        <mapping class="com.airport.entity.Passenger"/>
+        <mapping class="com.airport.entity.Flight"/>
+        <mapping class="com.airport.entity.Booking"/>
+    </session-factory>
+</hibernate-configuration>
